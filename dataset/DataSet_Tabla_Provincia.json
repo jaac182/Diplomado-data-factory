@@ -1,5 +1,5 @@
 {
-	"name": "DataSet_DataBase",
+	"name": "DataSet_Tabla_Provincia",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "LinkedService_Database",
