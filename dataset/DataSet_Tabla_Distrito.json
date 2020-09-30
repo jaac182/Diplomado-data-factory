@@ -1,0 +1,31 @@
+{
+	"name": "DataSet_Tabla_Distrito",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LinkedService_Database",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "id_distrito",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "descripcion",
+				"type": "nvarchar"
+			},
+			{
+				"name": "id_provincia",
+				"type": "int",
+				"precision": 10
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "DISTRITO"
+		}
+	}
+}

@@ -1,0 +1,33 @@
+{
+	"name": "DataSet_Archivo_Distrito",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LinkedService_Storage",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": "distritos.csv",
+				"fileSystem": "proyecto-provincias"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": [
+			{
+				"type": "String"
+			},
+			{
+				"type": "String"
+			},
+			{
+				"type": "String"
+			}
+		]
+	}
+}
