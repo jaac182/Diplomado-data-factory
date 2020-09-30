@@ -109,8 +109,9 @@
 						"mappings": [
 							{
 								"source": {
+									"name": "id",
 									"type": "String",
-									"ordinal": 1
+									"physicalType": "String"
 								},
 								"sink": {
 									"name": "id_distrito",
@@ -120,8 +121,9 @@
 							},
 							{
 								"source": {
+									"name": "name",
 									"type": "String",
-									"ordinal": 2
+									"physicalType": "String"
 								},
 								"sink": {
 									"name": "descripcion",
@@ -131,8 +133,9 @@
 							},
 							{
 								"source": {
+									"name": "province_id",
 									"type": "String",
-									"ordinal": 3
+									"physicalType": "String"
 								},
 								"sink": {
 									"name": "id_provincia",
