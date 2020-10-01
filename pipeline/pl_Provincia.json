@@ -27,10 +27,6 @@
 					},
 					"sink": {
 						"type": "AzureSqlSink",
-						"preCopyScript": {
-							"value": "truncate table [dbo].[PROVINCIA]",
-							"type": "Expression"
-						},
 						"disableMetricsCollection": false
 					},
 					"enableStaging": false,
