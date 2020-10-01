@@ -27,6 +27,10 @@
 					},
 					"sink": {
 						"type": "AzureSqlSink",
+						"preCopyScript": {
+							"value": "truncate table [dbo].[PROVINCIA]",
+							"type": "Expression"
+						},
 						"disableMetricsCollection": false
 					},
 					"enableStaging": false,
@@ -107,7 +111,12 @@
 						}
 					},
 					"sink": {
-						"type": "AzureSqlSink"
+						"type": "AzureSqlSink",
+						"preCopyScript": {
+							"value": "truncate table [dbo].[DISTRITO]",
+							"type": "Expression"
+						},
+						"disableMetricsCollection": false
 					},
 					"enableStaging": false,
 					"translator": {
