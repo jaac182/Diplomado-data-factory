@@ -35,9 +35,7 @@
 						"mappings": [
 							{
 								"source": {
-									"name": "id",
-									"type": "String",
-									"physicalType": "String"
+									"name": "id"
 								},
 								"sink": {
 									"name": "id_provincia",
