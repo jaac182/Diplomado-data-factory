@@ -1,0 +1,30 @@
+{
+	"name": "Tabla_Provincia_3Campos",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LinkedService_Database",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "id_provincia",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "descripcion",
+				"type": "nvarchar"
+			},
+			{
+				"name": "fecha_carga",
+				"type": "date"
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "PROVINCIA"
+		}
+	}
+}

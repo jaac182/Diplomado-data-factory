@@ -1,0 +1,32 @@
+{
+	"name": "dataflow1",
+	"properties": {
+		"type": "MappingDataFlow",
+		"typeProperties": {
+			"sources": [
+				{
+					"dataset": {
+						"referenceName": "DataSet_Archivo_Provincia",
+						"type": "DatasetReference"
+					},
+					"name": "FuenteProvincia"
+				}
+			],
+			"sinks": [
+				{
+					"dataset": {
+						"referenceName": "Tabla_Provincia_3Campos",
+						"type": "DatasetReference"
+					},
+					"name": "TablaProvincia"
+				}
+			],
+			"transformations": [
+				{
+					"name": "ColumnaNueva"
+				}
+			],
+			"script": "source(output(\n\t\tid as string,\n\t\tname as string\n\t),\n\tallowSchemaDrift: true,\n\tvalidateSchema: false,\n\tignoreNoFilesFound: false) ~> FuenteProvincia\nFuenteProvincia derive(fecha_hoy = currentDate()) ~> ColumnaNueva\nColumnaNueva sink(input(\n\t\tid_provincia as integer,\n\t\tdescripcion as string,\n\t\tfecha_carga as date\n\t),\n\tallowSchemaDrift: true,\n\tvalidateSchema: false,\n\tdeletable:false,\n\tinsertable:true,\n\tupdateable:false,\n\tupsertable:false,\n\ttruncate:true,\n\tformat: 'table',\n\tmapColumn(\n\t\tid_provincia = id,\n\t\tdescripcion = name,\n\t\tfecha_carga = fecha_hoy\n\t),\n\tskipDuplicateMapInputs: true,\n\tskipDuplicateMapOutputs: true) ~> TablaProvincia"
+		}
+	}
+}
