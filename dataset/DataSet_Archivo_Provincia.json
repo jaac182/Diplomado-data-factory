@@ -5,6 +5,9 @@
 			"referenceName": "LinkedService_Storage",
 			"type": "LinkedServiceReference"
 		},
+		"folder": {
+			"name": "Provincia"
+		},
 		"annotations": [],
 		"type": "DelimitedText",
 		"typeProperties": {

@@ -5,6 +5,9 @@
 			"referenceName": "LinkedService_Database",
 			"type": "LinkedServiceReference"
 		},
+		"folder": {
+			"name": "Provincia"
+		},
 		"annotations": [],
 		"type": "AzureSqlTable",
 		"schema": [
