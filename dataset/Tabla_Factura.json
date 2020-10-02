@@ -1,0 +1,40 @@
+{
+	"name": "Tabla_Factura",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LinkedService_Database",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "id_factura",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "cedula",
+				"type": "nvarchar"
+			},
+			{
+				"name": "monto",
+				"type": "money",
+				"precision": 19,
+				"scale": 4
+			},
+			{
+				"name": "cajero",
+				"type": "nvarchar"
+			},
+			{
+				"name": "fecha",
+				"type": "date"
+			}
+		],
+		"typeProperties": {
+			"schema": "VENTAS",
+			"table": "factura"
+		}
+	}
+}
