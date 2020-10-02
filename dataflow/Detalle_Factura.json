@@ -1,0 +1,28 @@
+{
+	"name": "Detalle_Factura",
+	"properties": {
+		"type": "MappingDataFlow",
+		"typeProperties": {
+			"sources": [
+				{
+					"dataset": {
+						"referenceName": "Archivo_Detalle_Factura",
+						"type": "DatasetReference"
+					},
+					"name": "ArchivoDetalleFactura"
+				}
+			],
+			"sinks": [
+				{
+					"dataset": {
+						"referenceName": "TablaDetalleFactura",
+						"type": "DatasetReference"
+					},
+					"name": "TablaDetalleFactura"
+				}
+			],
+			"transformations": [],
+			"script": "source(output(\n\t\tid_factura as string,\n\t\tproducto as string,\n\t\tcantidad as string,\n\t\tprecio_unitario as string,\n\t\ttotal as string\n\t),\n\tallowSchemaDrift: true,\n\tvalidateSchema: false,\n\tignoreNoFilesFound: false) ~> ArchivoDetalleFactura\nArchivoDetalleFactura sink(input(\n\t\tid_detalle as integer,\n\t\tid_factura as integer,\n\t\tproducto as string,\n\t\tcantidad as integer,\n\t\tprecio_unitario as decimal(19,4),\n\t\ttotal as decimal(19,4)\n\t),\n\tallowSchemaDrift: true,\n\tvalidateSchema: false,\n\tdeletable:false,\n\tinsertable:true,\n\tupdateable:false,\n\tupsertable:false,\n\tformat: 'table',\n\tmapColumn(\n\t\tid_factura,\n\t\tproducto,\n\t\tcantidad,\n\t\tprecio_unitario,\n\t\ttotal\n\t),\n\tskipDuplicateMapInputs: true,\n\tskipDuplicateMapOutputs: true) ~> TablaDetalleFactura"
+		}
+	}
+}
