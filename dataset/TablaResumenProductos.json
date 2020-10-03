@@ -1,0 +1,37 @@
+{
+	"name": "TablaResumenProductos",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LinkedService_Database",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "id_rproducto",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "producto",
+				"type": "nvarchar"
+			},
+			{
+				"name": "cantidad_vendida",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "total",
+				"type": "decimal",
+				"precision": 10,
+				"scale": 2
+			}
+		],
+		"typeProperties": {
+			"schema": "VENTAS",
+			"table": "ResumenPorProducto"
+		}
+	}
+}
